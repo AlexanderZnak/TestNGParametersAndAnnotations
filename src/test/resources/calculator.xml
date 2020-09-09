@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite" parallel="tests" thread-count="2">
+    <test name="blaBla">
+        <groups>
+            <run>
+                <exclude name="necessary"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="CalculatorTests">
+            <parameter name="someNumber" value="15"></parameter>
+                <methods>
+                    <exclude name="justTestToExcludeByXml"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="moreBlaBla">
+        <classes>
+            <class name="CalculatorTests">
+                <parameter name="someNumber" value="15"></parameter>
+            </class>
+        </classes>
+    </test>
+    <test name="tryGroup">
+        <groups>
+            <run>
+                <include name="try"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="CalculatorTests2"/>
+        </classes>
+    </test>
+</suite>
